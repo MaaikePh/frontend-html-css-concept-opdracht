@@ -69,7 +69,7 @@ a:hover {
 /* --------------- 3.1 Reusable ----------------------- */
 
 .outer-container {
-    border: 2px dashed red;
+    /*border: 2px dashed red;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -187,6 +187,98 @@ nav ul {
 }
 
 /* --------------- 4.3 Projects ------------------- */
+
+#case-studies {
+    background-color: var(--color-background-primary);
+    padding: 5rem 1.8rem 10.5rem 1.8rem;
+}
+
+.inner-container {
+    /*border: 2px dashed pink;*/
+    flex-basis: 96.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article-wrapper {
+    /*border: 2px dashed green;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.article-wrapper:nth-child(even) {
+    flex-direction: row-reverse;
+    padding-right: 1rem;
+}
+
+.article-content {
+    /*border: 2px dashed yellow;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 0.5rem 0 0.5rem 2.3rem;
+    max-width: 22.5rem;
+    min-height: 17rem;
+}
+
+.article-content-even {
+    /*border: 2px dashed yellow;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 0 1.5rem 0.5rem 0.8rem;
+    max-width: 22.5rem;
+    min-height: 17.1rem;
+}
+
+.article-content h3,
+.article-content-even h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding: 0;
+}
+
+.article-content img,
+.article-content-even img {
+    width: 3.5625rem;
+    padding: 2rem 0;
+}
+
+.article-content p,
+.article-content-even p {
+    font-size: 1.05rem;
+    font-weight: 400;
+    padding: 0.5rem 0;
+}
+
+.article-content a,
+.article-content a:visited,
+.article-content a:hover,
+.article-content-even a,
+.article-content-even a:visited,
+.article-content-even a:hover {
+    color: var(--color-purple);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    padding: 2.5rem 0 0 0;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+}
+
+.image-wrapper {
+    flex-basis: 42.1rem;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
 
 /* --------------- 4.4 Services ------------------- */
 
