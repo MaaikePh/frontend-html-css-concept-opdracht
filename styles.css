@@ -10,7 +10,10 @@
     4. Areas
         4.1 Header
         4.2 Introduction
-        etc.
+        4.3 Projects
+        4.4 Services
+        4.5 Contactform
+        4.6 Footer
     5. Media Queries
 ////////////////////////*/
 
@@ -66,6 +69,7 @@ a:hover {
 /* --------------- 3.1 Reusable ----------------------- */
 
 .outer-container {
+    border: 2px dashed red;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,8 +92,6 @@ a:hover {
     padding: 0.4rem 1rem 12.9rem 1rem;
     position: relative;
 }
-
-/*url("assets/squiggle_line_stripe.svg") no-repeat center bottom,*/
 
 nav ul {
     font-size: 1rem;
@@ -140,28 +142,56 @@ nav ul {
 
 /* --------------- 4.2 Introduction ------------------- */
 
-/*.introduction {*/
-/*    color: var(--color-purple);*/
-/*}*/
+.introduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-basis: 536px;
+    max-width: 45.75rem;
+    margin: 0 auto;
+    color: var(--color-purple);
+}
 
 /*.floating-title {*/
+/*    border: 2px dashed yellow;*/
 /*    color: var(--color-text-secondary);*/
+/*    font-size: 0.5rem;*/
+/*    padding: 1.5rem 0;*/
 /*}*/
 
-/*.introduction a,*/
-/*.introduction a:visited,*/
-/*.introduction a:hover {*/
-/*    color: var(--color-purple);*/
-/*}*/
+.introduction h2 {
+    font-size: 1.7rem;
+    padding: 6rem 0 0 0;
+}
 
-/*.introduction p {*/
-/*    !*flex-basis: 500px;*!*/
-/*    font-size: 24px;*/
-/*    padding: 16px 200px;*/
-/*}*/
+.introduction a,
+.introduction a:visited,
+.introduction a:hover {
+    color: var(--color-purple);
+}
 
-/*.link-text {*/
-/*    color: var(--color-text-primary);*/
-/*}*/
+.intro-paragraph {
+    font-family: var(--font-heading), serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding: 1.3rem 0 0 0;
+    line-height: 1.5;
+}
+
+.link-text {
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5.3rem;
+}
+
+/* --------------- 4.3 Projects ------------------- */
+
+/* --------------- 4.4 Services ------------------- */
+
+/* --------------- 4.5 Contactform ------------------- */
+
+/* --------------- 4.6 Footer ------------------- */
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
