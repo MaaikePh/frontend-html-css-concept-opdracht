@@ -275,67 +275,49 @@ nav ul {
 }
 
 .services-container {
-    /*border: 2px dashed blue;*/
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
     gap: 2.1rem;
 }
 
-.article-block-1 {
+.service-card {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    height: 18.6rem;
+    flex: 1 1 20.3rem;
     max-width: 20.3rem;
-    padding: 0 2.1rem;
+    padding: 0 2.1rem 2.6rem;
     text-align: left;
     border: 0.08rem solid var(--color-purple);
     box-shadow: rgba(0, 0, 0, 0.14) 0 3px 8px;
 }
 
-.article-block-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 19.7rem;
-    max-width: 20.3rem;
-    padding: 0 2.1rem;
-    text-align: left;
-    border: 0.08rem solid var(--color-purple);
-    box-shadow: rgba(0, 0, 0, 0.14) 0 3px 8px;
-}
-
-.article-block-1 img,
-.article-block-2 img {
+.service-card img {
     max-width: 4.4rem;
-
 }
 
-.article-block-1 img {
+.card-top-row img {
     padding-top: 2rem;
 }
 
-.article-block-2 img {
+.card-bottom-row img {
     padding-top: 2.5rem;
 }
 
-.article-block-1 h3,
-.article-block-2 h3 {
+.service-card h3 {
     font-size: 1.27rem;
     font-weight: 700;
     color: var(--color-purple);
     padding: 0.5rem 0;
 }
 
-.article-block-1 p,
-.article-block-2 p {
+.service-card p {
     font-size: 0.83rem;
     padding-top: 1rem;
 }
 
-.article-block-2 p {
+.card-bottom-row p {
     padding-right: 0.1rem;
 }
 
