@@ -193,7 +193,7 @@ nav ul {
     padding: 5rem 1.8rem 10.5rem 1.8rem;
 }
 
-.inner-container {
+.projects-container {
     display: flex;
     flex-direction: column;
     gap: 5.5rem;
@@ -269,6 +269,75 @@ nav ul {
 }
 
 /* --------------- 4.4 Services ------------------- */
+
+#services {
+    padding: 5.3rem 1.8rem;
+}
+
+.services-container {
+    /*border: 2px dashed blue;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2.1rem;
+}
+
+.article-block-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 18.6rem;
+    max-width: 20.3rem;
+    padding: 0 2.1rem;
+    text-align: left;
+    border: 0.08rem solid var(--color-purple);
+    box-shadow: rgba(0, 0, 0, 0.14) 0 3px 8px;
+}
+
+.article-block-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 19.7rem;
+    max-width: 20.3rem;
+    padding: 0 2.1rem;
+    text-align: left;
+    border: 0.08rem solid var(--color-purple);
+    box-shadow: rgba(0, 0, 0, 0.14) 0 3px 8px;
+}
+
+.article-block-1 img,
+.article-block-2 img {
+    max-width: 4.4rem;
+
+}
+
+.article-block-1 img {
+    padding-top: 2rem;
+}
+
+.article-block-2 img {
+    padding-top: 2.5rem;
+}
+
+.article-block-1 h3,
+.article-block-2 h3 {
+    font-size: 1.27rem;
+    font-weight: 700;
+    color: var(--color-purple);
+    padding: 0.5rem 0;
+}
+
+.article-block-1 p,
+.article-block-2 p {
+    font-size: 0.83rem;
+    padding-top: 1rem;
+}
+
+.article-block-2 p {
+    padding-right: 0.1rem;
+}
 
 /* --------------- 4.5 Contactform ------------------- */
 
