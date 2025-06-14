@@ -57,9 +57,7 @@ h1 {
     font-size: 2.5rem;
 }
 
-a,
-a:visited,
-a:hover {
+a {
     color: var(--color-text-secondary);
     text-decoration: none;
 }
@@ -271,7 +269,7 @@ nav ul {
 /* --------------- 4.4 Services ------------------- */
 
 #services {
-    padding: 5.3rem 1.8rem;
+    padding: 5.2rem 1.8rem;
 }
 
 .services-container {
@@ -323,6 +321,91 @@ nav ul {
 
 /* --------------- 4.5 Contactform ------------------- */
 
+.container-background {
+    color: var(--color-text-secondary);
+    background: no-repeat center bottom,linear-gradient(83deg,rgba(72, 69, 228, 1) 27%, rgba(87, 34, 205, 1) 80%);
+    /*background-size: 3.3rem auto, cover;*/
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    /*border: 2px dashed white;*/
+    max-width: 44.99rem;
+    width: 90%;
+    margin: 5rem auto 3.5rem auto;
+}
+
+.form-wrapper h2 {
+    font-size: 2.51rem;
+    font-weight: 800;
+    padding-bottom: 1.43rem;
+}
+
+.form-wrapper p {
+    font-size: 1.06rem;
+    font-weight: 300;
+    padding-bottom: 1.76rem;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.contact-input {
+    width: 100%;
+    border: 1px solid var(--color-text-tertiary);
+    border-radius: 0.21rem;
+    padding: 1.1rem 1.1rem;
+    margin-bottom: 2.1rem;
+}
+
+.contact-input::placeholder {
+    font-size: 0.85rem;
+    font-family: var(--font-normal), sans-serif;
+}
+
+.contact-message {
+    min-height: 12.2rem;
+    padding: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.form-container button {
+    width: 100%;
+    max-width: 10.5rem;
+    padding: 1.27rem 0;
+    border: none;
+    border-radius: 4.9rem;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    background: var(--color-button);
+    box-shadow: 0.1rem 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: hsl(337, 99%, 50%);
+}
+
 /* --------------- 4.6 Footer ------------------- */
+
+footer {
+    height: 3.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--color-text-primary);
+    color: var(--color-text-secondary);
+    font-weight: 300;
+    font-size: 0.74rem;
+}
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
