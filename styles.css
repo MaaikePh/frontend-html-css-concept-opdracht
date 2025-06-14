@@ -84,7 +84,7 @@ a {
     display: flex;
     flex-direction: column;
     row-gap: 3.8rem;
-    background: no-repeat center bottom,linear-gradient(83deg,rgba(72, 69, 228, 1) 27%, rgba(87, 34, 205, 1) 80%);
+    background: no-repeat center bottom, linear-gradient(83deg, rgba(72, 69, 228, 1) 27%, rgba(87, 34, 205, 1) 80%);
     background-size: 3.3rem auto, cover;
     color: var(--color-text-secondary);
     padding: 0.4rem 1rem 12.9rem 1rem;
@@ -131,7 +131,7 @@ nav ul {
 }
 
 .header-icon {
-    width:3.3rem;
+    width: 3.3rem;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -145,18 +145,10 @@ nav ul {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    flex-basis: 536px;
     max-width: 45.75rem;
     margin: 0 auto;
     color: var(--color-purple);
 }
-
-/*.floating-title {*/
-/*    border: 2px dashed yellow;*/
-/*    color: var(--color-text-secondary);*/
-/*    font-size: 0.5rem;*/
-/*    padding: 1.5rem 0;*/
-/*}*/
 
 .introduction h2 {
     font-size: 1.7rem;
@@ -245,9 +237,7 @@ nav ul {
     padding: 0.5rem 0;
 }
 
-.article-content a,
-.article-content a:visited,
-.article-content a:hover {
+.article-content a {
     color: var(--color-purple);
     text-transform: uppercase;
     font-size: 0.75rem;
@@ -258,6 +248,7 @@ nav ul {
 
 .image-wrapper img {
     max-width: 100%;
+    box-shadow: 0.1rem 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
 }
 
 .image-wrapper {
@@ -323,8 +314,7 @@ nav ul {
 
 .container-background {
     color: var(--color-text-secondary);
-    background: no-repeat center bottom,linear-gradient(83deg,rgba(72, 69, 228, 1) 27%, rgba(87, 34, 205, 1) 80%);
-    /*background-size: 3.3rem auto, cover;*/
+    background: no-repeat center bottom, linear-gradient(83deg, rgba(72, 69, 228, 1) 27%, rgba(87, 34, 205, 1) 80%);
 }
 
 .form-wrapper {
@@ -409,3 +399,65 @@ footer {
 }
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 0.65rem;
+    }
+
+    nav ul {
+        justify-content: space-evenly;
+        font-weight: 500;
+    }
+
+    .header {
+        row-gap: 7rem;
+    }
+
+    .hero-content a {
+        font-size: 1.2rem;
+        padding: 1.5rem 2.5rem;
+    }
+
+    .introduction {
+        margin: 0 1.8rem;
+    }
+
+    .article-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        padding-left: 0;
+    }
+
+    .article-wrapper:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+
+    .image-wrapper {
+        flex-basis: 0;
+    }
+
+    .article-content {
+        padding: 2rem 0 0 0;
+        min-height: 0;
+        max-width: none;
+    }
+
+    .projects-container {
+        gap: 5rem;
+        align-items: stretch;
+    }
+
+    .article-content p {
+        font-size: 1.4rem;
+    }
+
+    .article-content a {
+        font-size: 1.1rem;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
