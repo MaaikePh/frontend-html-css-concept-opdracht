@@ -62,16 +62,57 @@ a {
     text-decoration: none;
 }
 
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--color-button);
+    outline-offset: 3px;
+    box-shadow: 0 0 8px var(--color-button);
+}
+
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 /* --------------- 3.1 Reusable ----------------------- */
 
 .outer-container {
-    /*border: 2px dashed red;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    position: relative;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-right: 100rem solid transparent;
+    border-top: 5rem solid transparent;
+    border-bottom: 3rem solid white;
+    position: absolute;
+    left: 0;
+    bottom: -0.1rem;
+}
+
+.triangle-top {
+    width: 0;
+    height: 0;
+    border-left: 100rem solid transparent;
+    border-top: 3rem solid white;
+    border-bottom: 5rem solid transparent;
+    position: absolute;
+    left: 0;
+    top: -0.1rem;
 }
 
 /* --------------- 3.2 Other --------------------------- */
@@ -89,6 +130,19 @@ a {
     color: var(--color-text-secondary);
     padding: 0.4rem 1rem 12.9rem 1rem;
     position: relative;
+    z-index: 1;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/noise-texture.png");
+    background-repeat: repeat;
+    background-size: 10% 10%;
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 nav ul {
@@ -150,14 +204,25 @@ nav ul {
     color: var(--color-purple);
 }
 
+.introduction-container::before {
+    position: absolute;
+    left: 50%;
+    bottom: 3rem;
+    transform: translateX(-50%);
+    content: "hello";
+    color: var(--color-text-secondary);
+    font-size: 26rem;
+    font-weight: bold;
+    z-index: -1;
+    letter-spacing: -1rem;
+}
+
 .introduction h2 {
     font-size: 1.7rem;
     padding: 6rem 0 0 0;
 }
 
-.introduction a,
-.introduction a:visited,
-.introduction a:hover {
+.introduction a {
     color: var(--color-purple);
 }
 
@@ -179,33 +244,51 @@ nav ul {
 /* --------------- 4.3 Projects ------------------- */
 
 #case-studies {
+    position: relative;
     background-color: var(--color-background-primary);
-    padding: 5rem 1.8rem 10.5rem 1.8rem;
+    padding: 19rem 1.8rem 10.5rem 1.8rem;
+}
+
+.case-studies-container {
+    position: relative;
+    z-index: 1;
+}
+
+.case-studies-container::before {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    content: "work";
+    color: white;
+    font-size: 26rem;
+    font-weight: bold;
+    z-index: -1;
+    letter-spacing: -1rem;
+    pointer-events: none;
 }
 
 .projects-container {
     display: flex;
     flex-direction: column;
     gap: 5.5rem;
-    max-width: 82rem;
+    max-width: 100rem;
     width: 100%;
 }
 
 .article-wrapper {
-    /*border: 2px dashed green;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 1rem;
 }
 
-.article-wrapper:nth-child(even) {
+.article-wrapper:nth-child(odd) {
     flex-direction: row-reverse;
     padding-right: 1rem;
 }
 
 .article-content {
-    /*border: 2px dashed yellow;*/
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -215,35 +298,63 @@ nav ul {
     min-height: 17rem;
 }
 
-.article-wrapper:nth-child(even) .article-content {
+.article-wrapper:nth-child(odd) .article-content {
     padding-left: 0.8rem;
     padding-right: 1.5rem;
 }
 
 .article-content h3 {
+    position: relative;
     font-size: 1.7rem;
     font-weight: 700;
-    padding: 0;
+    padding: 0 0 2rem 0;
 }
 
-.article-content img {
+.article-content h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 3.5625rem;
-    padding: 2rem 0;
+    height: 0.625rem;
+    background-image: url("assets/squiggle_line.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .article-content p {
     font-size: 1.05rem;
     font-weight: 400;
-    padding: 0.5rem 0;
+    padding: 2rem 0 0.5rem 0;
 }
 
 .article-content a {
     color: var(--color-purple);
+    cursor: pointer;
     text-transform: uppercase;
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.1rem;
     padding: 2.5rem 0 0 0;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.article-content a::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    width: 1rem;
+    height: 0.08rem;
+    background-color: var(--color-purple);
+    transition: width .35s ease;
+}
+
+.article-content a:hover::after {
+    width: 3rem;
 }
 
 .image-wrapper img {
@@ -260,7 +371,20 @@ nav ul {
 /* --------------- 4.4 Services ------------------- */
 
 #services {
-    padding: 5.2rem 1.8rem;
+    padding: 15rem 1.8rem 5.2rem 1.8rem;
+}
+
+.service-container::before {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    content: "services";
+    color: var(--color-text-secondary);
+    font-size: 18rem;
+    font-weight: bold;
+    z-index: -1;
+    letter-spacing: -1rem;
 }
 
 .services-container {
@@ -279,6 +403,7 @@ nav ul {
     padding: 0 2.1rem 2.6rem;
     text-align: left;
     border: 0.08rem solid var(--color-purple);
+    background-color: white;
     box-shadow: rgba(0, 0, 0, 0.14) 0 3px 8px;
 }
 
@@ -315,12 +440,25 @@ nav ul {
 .container-background {
     color: var(--color-text-secondary);
     background: no-repeat center bottom, linear-gradient(83deg, rgba(72, 69, 228, 1) 27%, rgba(87, 34, 205, 1) 80%);
+    position: relative;
+    z-index: 1;
+}
+
+.container-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/noise-texture.png");
+    background-repeat: repeat;
+    background-size: 10% 10%;
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .form-wrapper {
     display: flex;
     flex-direction: column;
-    /*border: 2px dashed white;*/
     max-width: 44.99rem;
     width: 90%;
     margin: 5rem auto 3.5rem auto;
@@ -414,6 +552,10 @@ footer {
         row-gap: 7rem;
     }
 
+    .introduction h2 {
+        padding-top: 10rem;
+    }
+
     .hero-content a {
         font-size: 1.2rem;
         padding: 1.5rem 2.5rem;
@@ -429,7 +571,7 @@ footer {
         padding-left: 0;
     }
 
-    .article-wrapper:nth-child(even) {
+    .article-wrapper:nth-child(odd) {
         flex-direction: column-reverse;
     }
 
@@ -459,5 +601,40 @@ footer {
     img {
         max-width: 100%;
         height: auto;
+    }
+
+    .triangle {
+        border-right: 40rem solid transparent;
+        border-top: 5rem solid transparent;
+        border-bottom: 3rem solid white;
+    }
+
+    .triangle-top {
+        border-left: 40rem solid transparent;
+        border-top: 3rem solid white;
+        border-bottom: 5rem solid transparent;
+    }
+
+    .introduction-container::before {
+        font-size: 14rem;
+        top: 2rem;
+    }
+
+    #case-studies {
+        padding-top: 12rem;
+    }
+
+    .case-studies-container::before {
+        font-size: 14rem;
+        top: 2rem;
+    }
+
+    #services {
+        padding-top: 7rem;
+    }
+
+    .service-container::before {
+        font-size: 8rem;
+        letter-spacing: -0.5rem;
     }
 }
