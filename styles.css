@@ -42,6 +42,7 @@
 
 body {
     font-family: var(--font-normal), sans-serif;
+    overflow-x: hidden;
 }
 
 html {
@@ -96,9 +97,9 @@ select:focus-visible {
 .triangle {
     width: 0;
     height: 0;
-    border-right: 100rem solid transparent;
+    border-right: 100vw solid transparent;
     border-top: 5rem solid transparent;
-    border-bottom: 3rem solid white;
+    border-bottom: 5rem solid white;
     position: absolute;
     left: 0;
     bottom: -0.1rem;
@@ -107,8 +108,8 @@ select:focus-visible {
 .triangle-top {
     width: 0;
     height: 0;
-    border-left: 100rem solid transparent;
-    border-top: 3rem solid white;
+    border-left: 100vw solid transparent;
+    border-top: 5rem solid white;
     border-bottom: 5rem solid transparent;
     position: absolute;
     left: 0;
@@ -272,7 +273,7 @@ nav ul {
     display: flex;
     flex-direction: column;
     gap: 5.5rem;
-    max-width: 100rem;
+    /*max-width: 100rem;*/
     width: 100%;
 }
 
@@ -604,15 +605,11 @@ footer {
     }
 
     .triangle {
-        border-right: 40rem solid transparent;
-        border-top: 5rem solid transparent;
         border-bottom: 3rem solid white;
     }
 
     .triangle-top {
-        border-left: 40rem solid transparent;
         border-top: 3rem solid white;
-        border-bottom: 5rem solid transparent;
     }
 
     .introduction-container::before {
