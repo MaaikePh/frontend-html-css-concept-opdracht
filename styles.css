@@ -1,24 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /*////////////////////////
     Table of Contents
     1. Global Styles
     2. Typography
     3. Layout
-        3.1 Reusables
+        3.1 Reusable
         3.2 Other
     4. Areas
         4.1 Header
         4.2 Introduction
-        etc.
+        4.3 Projects
+        4.4 Services
+        4.5 Contactform
+        4.6 Footer
     5. Media Queries
 ////////////////////////*/
 
 /* ------------------------------- 1. Global Styles -------------------------------- */
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --font-heading: 'Merriweather', Georgia, serif;
+    --font-normal: 'Roboto', Arial, sans-serif;
+
+    --color-text-primary: #0C0C0C;
+    --color-text-secondary: #F2F0FF;
+    --color-text-tertiary: #7A7A7A;
+    --color-background-primary: #F3F6F9;
+    --color-background-secondary: #4845E4;
+    --color-button: #ED4385;
+    --color-purple: #5722CD;
+}
+
 /* ------------------------------- 2. Typography ----------------------------------- */
+
+body {
+    font-family: var(--font-normal), sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), serif;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--color-button);
+    outline-offset: 3px;
+    box-shadow: 0 0 8px var(--color-button);
+}
 
 /* ------------------------------- 3. Layout --------------------------------------- */
 
-/* --------------- 3.1 Reusables ----------------------- */
+/* --------------- 3.1 Reusable ----------------------- */
+
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-right: 100vw solid transparent;
+    border-top: 5rem solid transparent;
+    border-bottom: 5rem solid white;
+    position: absolute;
+    left: 0;
+    bottom: -0.1rem;
+}
+
+.triangle-top {
+    width: 0;
+    height: 0;
+    border-left: 100vw solid transparent;
+    border-top: 5rem solid white;
+    border-bottom: 5rem solid transparent;
+    position: absolute;
+    left: 0;
+    top: -0.1rem;
+}
 
 /* --------------- 3.2 Other --------------------------- */
 
@@ -26,6 +122,516 @@
 
 /* --------------- 4.1 Header ------------------------- */
 
+.header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3.8rem;
+    background: no-repeat center bottom, linear-gradient(83deg, rgba(72, 69, 228, 1) 27%, rgba(87, 34, 205, 1) 80%);
+    background-size: 3.3rem auto, cover;
+    color: var(--color-text-secondary);
+    padding: 0.4rem 1rem 12.9rem 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/noise-texture.png");
+    background-repeat: repeat;
+    background-size: 10% 10%;
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+nav ul {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3.3rem;
+    list-style: none;
+    padding: 1rem 1.7rem;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 45.75rem;
+    padding-bottom: 1.5rem;
+    margin: 0 auto;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 0.4rem 0 2.9rem 0;
+}
+
+.hero-content a {
+    cursor: pointer;
+    background-color: var(--color-button);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border-radius: 5rem;
+    padding: 1.2rem 2.2rem;
+    box-shadow: 0.1rem 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
+.hero-content a:hover {
+    background-color: hsl(337, 99%, 50%);
+}
+
+.header-icon {
+    width: 3.3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
 /* --------------- 4.2 Introduction ------------------- */
 
+.introduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 45.75rem;
+    margin: 0 auto;
+    color: var(--color-purple);
+}
+
+.introduction-container::before {
+    position: absolute;
+    left: 50%;
+    bottom: 3rem;
+    transform: translateX(-50%);
+    content: "hello";
+    color: var(--color-text-secondary);
+    font-size: 26rem;
+    font-weight: bold;
+    z-index: -1;
+    letter-spacing: -1rem;
+}
+
+.introduction h2 {
+    font-size: 1.7rem;
+    padding: 6rem 0 0 0;
+}
+
+.introduction a {
+    color: var(--color-purple);
+}
+
+.intro-paragraph {
+    font-family: var(--font-heading), serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding: 1.3rem 0 0 0;
+    line-height: 1.5;
+}
+
+.link-text {
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5.3rem;
+}
+
+/* --------------- 4.3 Projects ------------------- */
+
+#case-studies {
+    position: relative;
+    background-color: var(--color-background-primary);
+    padding: 19rem 1.8rem 10.5rem 1.8rem;
+}
+
+.case-studies-container {
+    position: relative;
+    z-index: 1;
+}
+
+.case-studies-container::before {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    content: "work";
+    color: white;
+    font-size: 26rem;
+    font-weight: bold;
+    z-index: -1;
+    letter-spacing: -1rem;
+    pointer-events: none;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5.5rem;
+    /*max-width: 100rem;*/
+    width: 100%;
+}
+
+.article-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.article-wrapper:nth-child(odd) {
+    flex-direction: row-reverse;
+    padding-right: 1rem;
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 0.5rem 0 0.5rem 2.3rem;
+    max-width: 22.5rem;
+    min-height: 17rem;
+}
+
+.article-wrapper:nth-child(odd) .article-content {
+    padding-left: 0.8rem;
+    padding-right: 1.5rem;
+}
+
+.article-content h3 {
+    position: relative;
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding: 0 0 2rem 0;
+}
+
+.article-content h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3.5625rem;
+    height: 0.625rem;
+    background-image: url("assets/squiggle_line.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.article-content p {
+    font-size: 1.05rem;
+    font-weight: 400;
+    padding: 2rem 0 0.5rem 0;
+}
+
+.article-content a {
+    color: var(--color-purple);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    padding: 2.5rem 0 0 0;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.article-content a::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    width: 1rem;
+    height: 0.08rem;
+    background-color: var(--color-purple);
+    transition: width .35s ease;
+}
+
+.article-content a:hover::after {
+    width: 3rem;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    box-shadow: 0.1rem 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
+.image-wrapper {
+    flex-basis: 42.1rem;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+/* --------------- 4.4 Services ------------------- */
+
+#services {
+    padding: 15rem 1.8rem 5.2rem 1.8rem;
+}
+
+.service-container::before {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    content: "services";
+    color: var(--color-text-secondary);
+    font-size: 18rem;
+    font-weight: bold;
+    z-index: -1;
+    letter-spacing: -1rem;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2.1rem;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 20.3rem;
+    max-width: 20.3rem;
+    padding: 0 2.1rem 2.6rem;
+    text-align: left;
+    border: 0.08rem solid var(--color-purple);
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.14) 0 3px 8px;
+}
+
+.service-card img {
+    max-width: 4.4rem;
+}
+
+.card-top-row img {
+    padding-top: 2rem;
+}
+
+.card-bottom-row img {
+    padding-top: 2.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.27rem;
+    font-weight: 700;
+    color: var(--color-purple);
+    padding: 0.5rem 0;
+}
+
+.service-card p {
+    font-size: 0.83rem;
+    padding-top: 1rem;
+}
+
+.card-bottom-row p {
+    padding-right: 0.1rem;
+}
+
+/* --------------- 4.5 Contactform ------------------- */
+
+.container-background {
+    color: var(--color-text-secondary);
+    background: no-repeat center bottom, linear-gradient(83deg, rgba(72, 69, 228, 1) 27%, rgba(87, 34, 205, 1) 80%);
+    position: relative;
+    z-index: 1;
+}
+
+.container-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/noise-texture.png");
+    background-repeat: repeat;
+    background-size: 10% 10%;
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 44.99rem;
+    width: 90%;
+    margin: 5rem auto 3.5rem auto;
+}
+
+.form-wrapper h2 {
+    font-size: 2.51rem;
+    font-weight: 800;
+    padding-bottom: 1.43rem;
+}
+
+.form-wrapper p {
+    font-size: 1.06rem;
+    font-weight: 300;
+    padding-bottom: 1.76rem;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.contact-input {
+    width: 100%;
+    border: 1px solid var(--color-text-tertiary);
+    border-radius: 0.21rem;
+    padding: 1.1rem 1.1rem;
+    margin-bottom: 2.1rem;
+}
+
+.contact-input::placeholder {
+    font-size: 0.85rem;
+    font-family: var(--font-normal), sans-serif;
+}
+
+.contact-message {
+    min-height: 12.2rem;
+    padding: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.form-container button {
+    width: 100%;
+    max-width: 10.5rem;
+    padding: 1.27rem 0;
+    border: none;
+    border-radius: 4.9rem;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    background: var(--color-button);
+    box-shadow: 0.1rem 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: hsl(337, 99%, 50%);
+}
+
+/* --------------- 4.6 Footer ------------------- */
+
+footer {
+    height: 3.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--color-text-primary);
+    color: var(--color-text-secondary);
+    font-weight: 300;
+    font-size: 0.74rem;
+}
+
 /* ------------------------------- 5. Media Queries -------------------------------- */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 0.65rem;
+    }
+
+    nav ul {
+        justify-content: space-evenly;
+        font-weight: 500;
+    }
+
+    .header {
+        row-gap: 7rem;
+    }
+
+    .introduction h2 {
+        padding-top: 10rem;
+    }
+
+    .hero-content a {
+        font-size: 1.2rem;
+        padding: 1.5rem 2.5rem;
+    }
+
+    .introduction {
+        margin: 0 1.8rem;
+    }
+
+    .article-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        padding-left: 0;
+    }
+
+    .article-wrapper:nth-child(odd) {
+        flex-direction: column-reverse;
+    }
+
+    .image-wrapper {
+        flex-basis: 0;
+    }
+
+    .article-content {
+        padding: 2rem 0 0 0;
+        min-height: 0;
+        max-width: none;
+    }
+
+    .projects-container {
+        gap: 5rem;
+        align-items: stretch;
+    }
+
+    .article-content p {
+        font-size: 1.4rem;
+    }
+
+    .article-content a {
+        font-size: 1.1rem;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .triangle {
+        border-bottom: 3rem solid white;
+    }
+
+    .triangle-top {
+        border-top: 3rem solid white;
+    }
+
+    .introduction-container::before {
+        font-size: 14rem;
+        top: 2rem;
+    }
+
+    #case-studies {
+        padding-top: 12rem;
+    }
+
+    .case-studies-container::before {
+        font-size: 14rem;
+        top: 2rem;
+    }
+
+    #services {
+        padding-top: 7rem;
+    }
+
+    .service-container::before {
+        font-size: 8rem;
+        letter-spacing: -0.5rem;
+    }
+}
